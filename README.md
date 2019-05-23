@@ -115,3 +115,194 @@ first(10);
 first(20);
 
 ```
+
+## 同步和异步的区别
+
+同步会阻塞代码 异部的话不会阻塞代码
+alert 是同步 setTimeOut 是异部
+
+```
+console.log(1);
+setTimeout(function() {
+  console.log(2);
+}, 0);
+console.log(3);
+setTimeout(function() {
+  console.log(4);
+}, 1000);
+console.log(5);
+// 输出结果：1，3，5，2，4
+
+```
+
+## 前端使用异步的场景
+
+1.定时任务 setTimeout setInterval
+2.ajax 发送请求 动态加载 img 图片 3.时间绑定
+
+```
+需要等待的情况下都需要异步，因为不会像同步一样阻塞
+```
+
+## 常用的数组 api
+
+forEach（遍历所有元素）
+
+var arr = ['a', 'b', 'c', 'd'];
+arr.forEach(function (item, index) {
+console.log(item + ',' + index);
+})
+
+### map（对数组进行重新组装，生成新的数组）
+
+// map，生成新数组，不改变原来数组的格式
+var arr = ['a', 'b', 'c', 'd'];
+var result = arr.map(function (item, index) {
+return index + '/' + item;
+})
+console.log(result);
+
+### sort（对数组进行排序）
+
+// sort， 会改变原来数组
+var arr = [1, 23, 3, 4];
+var result = arr.sort(function (a, b) {
+// 从小到大排序
+return a - b;
+
+// 从大到小排序
+// return b - a;
+})
+console.log(result);
+
+### filter（过滤符合条件的元素）
+
+var arr = [1, 2, 3, 4];
+var result = arr.filter(function (item, index) {
+if (item < 3) {
+return true
+}
+})
+console.log(result);
+
+### every（判断所有元素是否都符合要求）
+
+var arr = [1, 2, 3, 4];
+var result = arr.every(function (item, index) {
+if (item < 3) {
+return true
+}
+})
+console.log(result); // false
+
+### some（判断是否有至少一个元素符合条件）
+
+var arr = [1, 2, 3, 4];
+var result = arr.some(function (item, index) {
+if (item < 3) {
+return true
+}
+})
+console.log(result); // true
+
+### join（根据条件对数组组合成字符串）
+
+var arr = [1, 2, 3, 4];
+var result = arr.join(',');
+console.log(result);
+
+### reverse（将数组反转）
+
+var arr = [1, 2, 3, 4];
+var result = arr.reverse();
+console.log(result);
+
+### for...of 和 for...in 的区别
+
+for...in 是取到 key 的值 对象和数组都可以用
+for...of 是取到 value 的值 数组可以用 对象不能用
+
+先说结论：
+
+推荐在循环对象属性的时候，使用 for...in,在遍历数组的时候的时候使用 for...of。
+
+for...in 循环出的是 key，for...of 循环出的是 value
+
+注意，for...of 是 ES6 新引入的特性。修复了 ES5 引入的 for...in 的不足
+
+for...of 不能循环普通的对象，需要通过和 Object.keys()搭配使用
+
+假设我们要遍历一个数组的 valuelet aArray = ['a',123,{a:'1',b:'2'}]
+
+使用 for...in 循环：
+
+```
+for(let index in aArray){
+    console.log(`${aArray[index]}`);
+}
+```
+
+使用 for...of 循环：
+
+```
+for(var value of aArray){
+    console.log(value);
+}
+```
+
+咋一看好像好像只是写法不一样而已，那为什么说 for...of 修复了 for...in 的缺陷和不足。
+假设我们往数组添加一个属性 name:
+aArray.name = 'demo',再分别查看上面写的两个循环：
+
+```
+for(let index in aArray){
+    console.log(`${aArray[index]}`); //Notice!!aArray.name也被循环出来了
+}
+for(var value of aArray){
+    console.log(value);
+}
+```
+
+所以说，作用于数组的 for-in 循环除了遍历数组元素以外,还会遍历自定义属性。
+
+for...of 循环不会循环对象的 key，只会循环出数组的 value，因此 for...of 不能循环遍历普通对象,对普通对象的属性遍历推荐使用 for...in
+
+如果实在想用 for...of 来遍历普通对象的属性的话，可以通过和 Object.keys()搭配使用，先获取对象的所有 key 的数组
+然后遍历：
+
+```
+var student={
+    name:'wujunchuan',
+    age:22,
+    locate:{
+    country:'china',
+    city:'xiamen',
+    school:'XMUT'
+    }
+}
+for(var key of Object.keys(student)){
+    //使用Object.keys()方法获取对象key的数组
+    console.log(key+": "+student[key]);
+}
+```
+
+## 获取随机数，要求长度一致的字符串格式
+
+function randomStr(len) {
+var random = Math.random();
+random = random + '0000000000'; // 防止自动生成的数字不满足长度报错并且强制转换成字符串
+return random.substr(0, len)
+}
+
+console.log(randomStr(20));
+
+## 关于 vsocde 的插件 -- 一些工具 js css react 的
+
+https://medium.com/productivity-freak/the-ultimate-vscode-setup-for-js-react-6a4f7bd51a2
+
+## 关于 react 的最佳实践
+
+https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8
+
+Closures
+Passing setState a Function
