@@ -306,4 +306,3 @@ https://engineering.musefind.com/our-best-practices-for-writing-react-components
 
 Closures
 Passing setState a Function
-this is readme.md
