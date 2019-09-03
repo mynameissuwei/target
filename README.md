@@ -306,4 +306,9 @@ https://engineering.musefind.com/our-best-practices-for-writing-react-components
 
 Closures
 Passing setState a Function
-asdfawf
+asdf
+git reset --soft HEAD@{1}
+asdfsasfd
+ASDFASDF
+
+THIS IS SUWEI
