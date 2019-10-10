@@ -33,7 +33,8 @@
     2019/1/18
     	上午看下rodemap,下午看视频。
 
-2019/1/22
+# 2019/1/22
+
 继续用 Gatsby 实现自己的个人博客
 垃圾 Gatsby 按照官方文档操作都出现一堆问题
 继续看 react 的源码 他那个文档需要搭配视频看,不能单独看。
@@ -48,6 +49,8 @@ react 源码 视频 中文文档 英文文档 三个资料 我希望 ok。
 
     2019/4/29
     	今天把第三章看完,同时把功能给改一下.
+
+# 2010/10/09
 
 ## 说下 new 出一个对象的过程
 
@@ -297,14 +300,10 @@ https://medium.com/productivity-freak/the-ultimate-vscode-setup-for-js-react-6a4
 
 https://engineering.musefind.com/our-best-practices-for-writing-react-components-dec3eb5c3fc8
 
-Closures
-Passing setState a Function
-asdf
-git reset --soft HEAD@{1}
-asdfsasfd
-ASDFASDF
+# 2019.10.10
 
-2019.10.10
-command + shift + v = markdow preview
-peek definition
-debugger for chrome
+## command + shift + v = markdow preview
+
+## peek definition
+
+## debugger for chrome
