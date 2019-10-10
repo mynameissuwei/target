@@ -307,3 +307,33 @@ https://engineering.musefind.com/our-best-practices-for-writing-react-components
 ## peek definition
 
 ## debugger for chrome
+
+## useState 给一个对象
+
+```
+const [state,setState] = useState({
+  age:18
+})
+const handleClick = (val) => setState({
+  ...state,
+  [val]:state[val] + 1
+})
+```
+
+## useState 中的 setState 给一个函数
+
+```
+const [state,setState] = useState(0)
+
+setState(1)
+
+setState(previousValue => previousValue + 1)
+```
+
+## useLayoutEffect vs. useEffect
+
+## useReducer vs useReducer(reducer, initialCount, init)
+
+## useMemo 返回缓存的变量，useCallback 返回缓存的函数
+
+## useMemo useCallback useEffect 这三者具体的区别 实际的应用场景还不是很清楚 2019.10.10 干懂这个问题 看看买的那门课
