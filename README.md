@@ -75,7 +75,7 @@ let suwei = name(suwei)
 var a = {
   name: 'A',
   fun: function() {
-    console.log(this.name);
+
   }
 };
 
@@ -122,15 +122,15 @@ first(20);
 alert 是同步 setTimeOut 是异部
 
 ```
-console.log(1);
+
 setTimeout(function() {
-  console.log(2);
+
 }, 0);
-console.log(3);
+
 setTimeout(function() {
-  console.log(4);
+
 }, 1000);
-console.log(5);
+
 // 输出结果：1，3，5，2，4
 
 ```
@@ -150,7 +150,7 @@ forEach（遍历所有元素）
 
 var arr = ['a', 'b', 'c', 'd'];
 arr.forEach(function (item, index) {
-console.log(item + ',' + index);
+
 })
 
 ### map（对数组进行重新组装，生成新的数组）
@@ -160,7 +160,6 @@ var arr = ['a', 'b', 'c', 'd'];
 var result = arr.map(function (item, index) {
 return index + '/' + item;
 })
-console.log(result);
 
 ### sort（对数组进行排序）
 
@@ -173,7 +172,6 @@ return a - b;
 // 从大到小排序
 // return b - a;
 })
-console.log(result);
 
 ### filter（过滤符合条件的元素）
 
@@ -183,7 +181,6 @@ if (item < 3) {
 return true
 }
 })
-console.log(result);
 
 ### every（判断所有元素是否都符合要求）
 
@@ -193,7 +190,7 @@ if (item < 3) {
 return true
 }
 })
-console.log(result); // false
+// false
 
 ### some（判断是否有至少一个元素符合条件）
 
@@ -203,19 +200,17 @@ if (item < 3) {
 return true
 }
 })
-console.log(result); // true
+// true
 
 ### join（根据条件对数组组合成字符串）
 
 var arr = [1, 2, 3, 4];
 var result = arr.join(',');
-console.log(result);
 
 ### reverse（将数组反转）
 
 var arr = [1, 2, 3, 4];
 var result = arr.reverse();
-console.log(result);
 
 ### for...of 和 for...in 的区别
 
@@ -238,7 +233,7 @@ for...of 不能循环普通的对象，需要通过和 Object.keys()搭配使用
 
 ```
 for(let index in aArray){
-    console.log(`${aArray[index]}`);
+
 }
 ```
 
@@ -246,7 +241,7 @@ for(let index in aArray){
 
 ```
 for(var value of aArray){
-    console.log(value);
+
 }
 ```
 
@@ -256,10 +251,10 @@ aArray.name = 'demo',再分别查看上面写的两个循环：
 
 ```
 for(let index in aArray){
-    console.log(`${aArray[index]}`); //Notice!!aArray.name也被循环出来了
+     //Notice!!aArray.name也被循环出来了
 }
 for(var value of aArray){
-    console.log(value);
+
 }
 ```
 
@@ -282,7 +277,7 @@ var student={
 }
 for(var key of Object.keys(student)){
     //使用Object.keys()方法获取对象key的数组
-    console.log(key+": "+student[key]);
+
 }
 ```
 
@@ -293,8 +288,6 @@ var random = Math.random();
 random = random + '0000000000'; // 防止自动生成的数字不满足长度报错并且强制转换成字符串
 return random.substr(0, len)
 }
-
-console.log(randomStr(20));
 
 ## 关于 vsocde 的插件 -- 一些工具 js css react 的
 
@@ -311,4 +304,7 @@ git reset --soft HEAD@{1}
 asdfsasfd
 ASDFASDF
 
-THIS IS SUWEI
+2019.10.10
+command + shift + v = markdow preview
+peek definition
+debugger for chrome
